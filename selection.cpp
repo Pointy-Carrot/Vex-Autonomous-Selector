@@ -1,5 +1,6 @@
 #include "main.h"
 #include "selection.h"
+#include "gif-pros/gifclass.hpp"
 
 namespace selector{
 
@@ -12,6 +13,7 @@ lv_obj_t *redBtnm;
 lv_obj_t *blueBtnm;
 
 lv_res_t redBtnmAction(lv_obj_t *btnm, const char *txt){
+	underglow_lights.set_all(0xFF0000);
 	//printf("red button: %s released\n", txt);
 
 	for(int i = 0; i < autonCount; i++){
@@ -25,6 +27,7 @@ lv_res_t redBtnmAction(lv_obj_t *btnm, const char *txt){
 
 lv_res_t blueBtnmAction(lv_obj_t *btnm, const char *txt)
 {
+	underglow_lights.set_all(0x0000FF);
 	//printf("blue button: %s released\n", txt);
 
 	for(int i = 0; i < autonCount; i++){
